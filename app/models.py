@@ -28,6 +28,8 @@ class Book(db.Model):
     id = db.Column(db.Integer,primary_key = True)
     user_id = db.Column(db.Integer,db.ForeignKey('user.id')) 
     isbn = db.Column(db.String(120))
-
+    cover = db.Column(db.String(120))
+    title = db.Column(db.String(120))
+    author = db.Column(db.String(120))
     def __repr__(self):
         return '<Book %r>' % (self.isbn)

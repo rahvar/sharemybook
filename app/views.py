@@ -69,15 +69,18 @@ def userpost(username):
         flash('User %s not found.' % username)
         return redirect(url_for('home'))
     if form.validate_on_submit():
-            book = Book(isbn = form.isbn.data,owner = user)
+        isbn =form.isbn.data
+        info = bookinfo(isbn)
+        if  info !=None: 
+            title,cover,author = info
+            book = Book(isbn = isbn,owner = user,title =title
+                ,cover = cover,author = author)
             db.session.add(book)
             db.session.commit()
             flash("Your post is live")
             return redirect(url_for('user',username = username))
-    #books = Book.query.join(User).filter(User.username == username)  
-    books = user.books.all()
-    #info = bookinfo(books)
-    return render_template('post.html',username=username,user=user ,form=form)
+    #books = Book.query.join(User).filter(User.username == username) 
+    return render_template('post.html',username=username,user=user,form=form)
 
 @app.route('/login',methods = ["GET","POST"])
 def login():
