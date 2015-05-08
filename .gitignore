@@ -1,3 +1,5 @@
 flask/*
 *.pyc
 __pycache__
+db_repository
+*db

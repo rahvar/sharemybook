@@ -1,0 +1,40 @@
+{% extends "base.html"%}
+
+{% block content%}
+    <h1>User {{user.username}}</h1>
+        {% for user in users %}
+          {{user.username}},{{user.email}}
+        {% endfor %}
+      
+     
+      <form action="" method="post" name="book">
+      {{ form.hidden_tag() }}
+      <table>
+          <tr>
+              <td>Say something:</td>
+              <td>{{ form.isbn(size=30, maxlength=140) }}</td>
+              <td>
+              {% for error in form.isbn.errors %}
+              <span style="color: red;">[{{ error }}]</span><br>
+              {% endfor %}
+              </td>
+          </tr>
+          <tr>
+              <td></td>
+              <td><input type="submit" value="Post!"></td>
+              <td></td>
+          </tr>
+      </table>
+          {% for book in books %}
+            {{ book.isbn }}  
+
+          {% endfor %} 
+          {% for i in info %}
+            {{i[0]}}
+            <img src = "{{i[1]}}"></img>
+            {{i[2]}}
+            <hr>
+          {% endfor %}
+      </form>
+
+{% endblock %}
