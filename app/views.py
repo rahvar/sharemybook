@@ -46,9 +46,23 @@ def registration():
  
     return render_template("register.html", form = form)
 
-@app.route('/user/<username>',methods = ['GET', 'POST'])
+
+@app.route('/user/<username>')
 @login_required
 def user(username):
+    user = User.query.filter_by(username = username).first()
+    if user is None:
+        flash('User %s not found.' % username)
+        return redirect(url_for('home'))
+
+    books = user.books.all()
+    #info = bookinfo(books)
+    return render_template('user.html',username=username,user=user,books = books )
+
+
+@app.route('/post/<username>',methods = ['GET', 'POST'])
+@login_required
+def userpost(username):
     form = PostForm()
     user = User.query.filter_by(username = username).first()
     if user is None:
@@ -63,7 +77,7 @@ def user(username):
     #books = Book.query.join(User).filter(User.username == username)  
     books = user.books.all()
     #info = bookinfo(books)
-    return render_template('user.html',username=username,user=user ,form=form,books =books)
+    return render_template('post.html',username=username,user=user ,form=form)
 
 @app.route('/login',methods = ["GET","POST"])
 def login():
