@@ -2,6 +2,10 @@
 	float: right;
 }
 
+.shift-down{
+	margin-top: 40px;
+}
+
 .xyz{
 	padding:90px;
 }
@@ -9,5 +13,13 @@
 .ddd{
 	height=33.333%;
 	background-color: #808080;
+}
+
+a{
+	color:#151717;
+}
+
+.gret{
+	font color: #34C920;
 }
 

@@ -3,61 +3,166 @@
 {% block content%}
        <br><br>
 
-    <!-- Page Content -->
+    
     <div class="container">
 
-        <!-- Portfolio Item Heading -->
+        
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">BRUCE BANNER
+                <h1 class="page-header">ALEX HOFFMAN
                     <small>   COMIC CON FAN, BOOKWORM, ADVENTURE JUNKIE</small>
                 </h1>
             </div>
         </div>
-        <!-- /.row -->
-
-        <!-- Portfolio Item Row -->
+        
         <div class="row">
 
+
+
             <div class="col-md-5">
-                <img class="img-responsive" src="static/img/team/team04.jpg" width="275px" height="275px" align="" alt="">
+            <br>
+                <img class="img-responsive" src="static/img/portfolio/folio01.jpg" width="350px" height="275px" align="middle" alt="">
+                <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-facebook"></i></a>
             </div>
 
             <div class="col-md-7">
-                <h3>About Me</h3>
-                <p>Founding member of the Avengers Initiative Team.Doctor by day and superhero by night.I smashhhh!!! and Read books.</p>
-                <h3>Topics of Intrest</h3>
+                <h2>About Me</h2>
+                <p>I'm a Philantrophist and a prolific actor. I have a great passion for reading fiction and sci-fi books, and have a good collection of books on these genres.Have a nice day!!</p>
+                <h3>Genres of Interest</h3>
                 <ul>
-                    <li>Marvel Comics</li>
-                    <li>Medicines</li>
-                    <li>Molecular DNA</li>
-                    <li>Bio-Regeneration</li>
+                <li>Fiction</li>
+                <li>SCI-FI</li>
+                    <li>Comics</li>
+                    
+                    <li>Drama</li>
+                    <li>Fantasy</li>
+                    
                     <br><br>
                 </ul>
             </div>
             <div class="shift">
-                <a href="" class="btn btn-primary">Schedule Visit</a>
-                <a href="" class="btn btn-primary">Rent Books</a>
+                
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        SCHEDULE A VISIT<span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#Foo">SUNDAY 10am-10pm</a></li>
+                        <li><a href="#">MONDAY 5pm-10pm</a></li>
+                        <li><a href="#">TUESDAY 5pm-10pm</a></li>
+                        <li><a href="#">WEDNESDAY 5pm-10pm</a></li>
+                        
+                        <li><a href="#">THURSDAY 5pm-10pm</a></li>
+                        <li><a href="#">FRIDAY 3pm-10pm</a></li>
+                        <li><a href="#">SATURDAYDAY3pm-10pm</a></li>
+                        
+                      </ul>
+                    </div>
+                
+                
             </div>
 
         </div>
-        <!-- /.row -->
-
-        <!-- Related Projects Row -->
+       
         <div class="row">
 
             <div class="col-lg-12">
-                <h3 class="page-header">Related Projects</h3>
+                <h3 class="page-header">MY LIBRARY</h3>
             </div>
+            
+                
             {% for book in books %}
+           
             <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="{{book.cover}}" alt="">
-                </a>
+                <div class="grid mask">
+                <figure><img class="img-responsive portfolio-item" src="{{book.cover}}" alt="">
+                     <figcaption> 
+                     <h5>{{book.title}}</h5>
+                     <a data-toggle="modal" href="#myModal{{loop.index}}" class="btn btn-default">View More</a></figcaption> 
+                    
+                    </figure>
+                </div>
             </div>
 
-            {% endfor %}
+            
         <!-- /.row -->
+
+        <div class="modal fade" id="myModal{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{book.title}}</h4>
+              </div>
+              <div class="modal-body">
+                <div class="col-lg-4">
+                    <p><img class="img-responsive" src="{{book.cover}}" align="top-left" alt=""></p>
+                </div>
+                <div class="col-lg-8">
+                    
+                        NAME : {{book.title}}
+                        <br><br>
+                        AUTHOR : {{book.author}}
+                        <br><br>
+                        GENRE : {{book.category}}
+                        <br>
+                    
+                    <a href="#Foo" class="btn btn-primary" data-toggle="collapse">Rent</a>
+                        <div id="Foo" class="collapse" >
+                            Your request has been processed!
+                        </div>
+                </div>
+              </div>
+              
+            </div>
+           
+          </div>
+          
+        </div>
+        
+     
+
+
+        <div class="modal fade" id="mymsg{{loop.index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{book.title}}</h4>
+              </div>
+              <div class="modal-body">
+                <div class="col-lg-4">
+                    <p><img class="img-responsive" src="{{book.cover}}" align="top-left" alt=""></p>
+                </div>
+                <div class="col-lg-8">
+                    
+                        NAME : {{book.title}}
+                        <br><br>
+                        AUTHOR : {{book.author}}
+                        <br><br>
+                        GENRE : {{book.category}}
+                        <br><br><br>
+                    <a href="#" class="btn btn-default shift">Rent</a>
+
+                </div>
+              </div>
+              
+            </div>
+             
+          </div>
+           
+        </div>
+        
+        {% endfor %}
+</div>
+
+
+        
+
+
+
+
+
 
         <hr>
 
@@ -65,7 +170,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>ANGLE HACK DEMO : SHARE MY BOOK</p>
+                    <p>ANGEL HACK DEMO : SHARE MY BOOK</p>
                 </div>
             </div>
             <!-- /.row -->

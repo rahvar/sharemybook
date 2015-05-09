@@ -12,6 +12,7 @@
   font-style: normal;
 }
 .fa {
+  margin-right:50px;
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -608,6 +609,7 @@
   content: "\f098";
 }
 .fa-twitter:before {
+  padding: 150px;
   content: "\f099";
 }
 .fa-facebook:before {

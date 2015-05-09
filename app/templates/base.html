@@ -9,6 +9,11 @@
 <title>SHAREMYBOOK</title>
 
 <!-- Bootstrap core CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 <link href="static/css/bootstrap.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="static/css/styles.css">
 <!-- Custom CSS -->
@@ -26,6 +31,21 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+    
 </head>
 
 
@@ -44,15 +64,15 @@
                             <ul class="nav navbar-nav navbar-right">
                               <li><a href="/home" class="smoothScroll">Home</a></li>
                               <li> <a href="/home#about" class="smoothScroll"> About</a></li>
-                              <li> <a href="/home#services" class="smoothScroll"> Services</a></li>
-
-                              
-                              <li><a href = "/login"  class="smoothScroll">Sign in </a></li>
-                              <li><a href = "/register"  class="smoothScroll"> Register </a><li>
-                              
-                              <li> <a href="/home#portfolio" class="smoothScroll"> Portfolio</a></li>
+                              <li> <a href="/home#services" class="smoothScroll"> HowItWorks</a></li>
+                              <li> <a href="/home#pouser" class="smoothScroll"> Users</a></li>
                               <li> <a href="/home#team" class="smoothScroll"> Team</a></li>
                               <li> <a href="/home#contact" class="smoothScroll"> Contact</a></li>
+                              
+                              <li><a href = "/home"  class="smoothScroll">SAM  <span class="glyphicon glyphicon-user" ></span></a></li>
+                            
+                              
+                              
                             </ul>
                             
 
