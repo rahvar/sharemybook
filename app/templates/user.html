@@ -1,15 +1,75 @@
 {% extends "base.html"%}
 
 {% block content%}
-    <h1>User </h1>
-        <br>
-        <br>
-        <br>
-          {% for book in books %}
-            {{ book.author }}  {{book.category}} {{book.title}}
-            <img src="{{book.cover}}">
+       <br><br>
 
-          {% endfor %} 
-      
-            <hr>
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">BRUCE BANNER
+                    <small>   COMIC CON FAN, BOOKWORM, ADVENTURE JUNKIE</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+
+            <div class="col-md-5">
+                <img class="img-responsive" src="static/img/team/team04.jpg" width="275px" height="275px" align="" alt="">
+            </div>
+
+            <div class="col-md-7">
+                <h3>About Me</h3>
+                <p>Founding member of the Avengers Initiative Team.Doctor by day and superhero by night.I smashhhh!!! and Read books.</p>
+                <h3>Topics of Intrest</h3>
+                <ul>
+                    <li>Marvel Comics</li>
+                    <li>Medicines</li>
+                    <li>Molecular DNA</li>
+                    <li>Bio-Regeneration</li>
+                    <br><br>
+                </ul>
+            </div>
+            <div class="shift">
+                <a href="" class="btn btn-primary">Schedule Visit</a>
+                <a href="" class="btn btn-primary">Rent Books</a>
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <!-- Related Projects Row -->
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header">Related Projects</h3>
+            </div>
+            {% for book in books %}
+            <div class="col-sm-3 col-xs-6">
+                <a href="#">
+                    <img class="img-responsive portfolio-item" src="{{book.cover}}" alt="">
+                </a>
+            </div>
+
+            {% endfor %}
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>ANGLE HACK DEMO : SHARE MY BOOK</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
 {% endblock %}
