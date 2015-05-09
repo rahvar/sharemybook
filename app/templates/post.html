@@ -1,8 +1,9 @@
 {% extends "base.html"%}
 
 {% block content%}
-     
-      <form action="" method="post" name="book">
+     <br>
+     <br>
+      <form action="" method="post" name="books">
       {{ form.hidden_tag() }}
       <table>
           <tr>
@@ -20,16 +21,7 @@
               <td></td>
           </tr>
       </table>
-          {% for book in books %}
-            {{ book.isbn }}  
 
-          {% endfor %} 
-          {% for i in info %}
-            {{i[0]}}
-            <img src = "{{i[1]}}"></img>
-            {{i[2]}}
-            <hr>
-          {% endfor %}
       </form>
 
 {% endblock %}

@@ -1,24 +1,15 @@
 {% extends "base.html"%}
 
 {% block content%}
-    <h1>User {{user.username}}</h1>
-        {% for user in users %}
-          {{user.username}},{{user.email}}
-        {% endfor %}
-      
-     
-
+    <h1>User </h1>
+        <br>
+        <br>
+        <br>
           {% for book in books %}
-            {{ book.isbn }}  {{book.title}}
+            {{ book.author }}  {{book.category}} {{book.title}}
             <img src="{{book.cover}}">
 
           {% endfor %} 
-          {% for i in info %}
-            {{i[0]}}
-            <img src = "{{i[1]}}"></img>
-            {{i[2]}}
+      
             <hr>
-          {% endfor %}
-
-
 {% endblock %}

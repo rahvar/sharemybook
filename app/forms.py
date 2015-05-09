@@ -1,7 +1,7 @@
 from flask.ext.wtf import Form
 from wtforms import StringField, BooleanField, TextAreaField,validators,TextField,PasswordField
 from wtforms.validators import DataRequired, Length
-from models import User
+
 
 class RegistrationForm(Form):
     username = TextField('Username', [validators.Length(min=4, max=20)])
